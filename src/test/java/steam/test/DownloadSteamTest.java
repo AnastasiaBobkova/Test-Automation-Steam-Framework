@@ -28,9 +28,9 @@ public class DownloadSteamTest extends BaseTest {
         String storeNavPullDownItem = LocaleMsgReader.getString("storeNav.categories");
         String storeNavGenrePopupMenuItem = LocaleMsgReader.getString("storeNavCategories.action");
 
-        SteamBasePage steamBasePage = new SteamBasePage();
-        steamBasePage.switchLanguage(browser.props.getProperty("language"));
-        steamBasePage.navigateStorePullDownMenu(storeNavPullDownItem,storeNavGenrePopupMenuItem);
+        SteamMainPage steamMainPage = new SteamMainPage();
+        steamMainPage.switchLanguage(browser.props.getProperty("language"));
+        steamMainPage.navigateStorePullDownMenu(storeNavPullDownItem,storeNavGenrePopupMenuItem);
 
         SteamCategoryPage steamCategoryPage = new SteamCategoryPage(storeNavGenrePopupMenuItem);
         int maxDiscount = steamCategoryPage.findMaxDiscount();

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class SteamBasePage extends BasePage {
-    private static String pageLocator = "//div[@class='home_page_sign_in_ctn small']";
+    private static String pageLocator = "logo";
 
     private static String languageDropdownLocator = "language_pulldown";
     private static String baseSingleLanguageLocator = "//div[@id='language_dropdown']//a";
@@ -22,7 +22,7 @@ public class SteamBasePage extends BasePage {
     private Label lblLanguages = new Label(By.xpath(baseSingleLanguageLocator));
 
     public SteamBasePage() {
-        super(By.xpath(pageLocator));
+        super(By.className(pageLocator));
     }
 
     public SteamBasePage(final By locator) {
