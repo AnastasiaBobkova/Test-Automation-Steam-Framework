@@ -3,6 +3,7 @@ package steam.pages;
 import framework.LocaleMsgReader;
 import framework.elements.BaseElement;
 import framework.elements.Button;
+import framework.elements.DropDown;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
@@ -14,9 +15,9 @@ public class SteamAgeCheckPage extends SteamBasePage {
     private static By selectMonthLocatorBy = By.id("ageMonth");
     private static By selectYearLocatorBy = By.id("ageYear");
 
-    private Select sltDay = new Select((new BaseElement(selectDayLocatorBy)).getElement());
-    private Select sltMonth = new Select((new BaseElement(selectMonthLocatorBy)).getElement());
-    private Select sltYear = new Select((new BaseElement(selectYearLocatorBy)).getElement());
+    private DropDown sltDay = new DropDown(selectDayLocatorBy);
+    private DropDown sltMonth = new DropDown(selectMonthLocatorBy);
+    private DropDown sltYear = new DropDown(selectYearLocatorBy);
 
     private Button btnViewPage = new Button(viewPageButtonLocatorBy);
 
@@ -25,15 +26,15 @@ public class SteamAgeCheckPage extends SteamBasePage {
     }
 
     public void selectDay(String day) {
-        sltDay.selectByValue(day);
+        sltDay.selectDropDownValue(day);
     }
 
     public void selectMonth(String month) {
-        sltMonth.selectByValue(month);
+        sltMonth.selectDropDownValue(month);
     }
 
     public void selectYear(String year) {
-        sltYear.selectByValue(year);
+        sltYear.selectDropDownValue(year);
     }
 
     /**
